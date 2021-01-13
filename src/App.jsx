@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import React from "react";
 import { css } from "@linaria/core";
 
 const hello = css`
@@ -7,7 +7,7 @@ const hello = css`
   font-weight: bold;
 `;
 
-const App: FunctionComponent = () => {
+const App = () => {
   return <div className={hello}>Hello!</div>;
 };
 

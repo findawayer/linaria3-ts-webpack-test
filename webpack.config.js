@@ -7,7 +7,7 @@ module.exports = (env) => {
 
   return {
     mode: isDevelopment ? "development" : "production",
-    entry: path.join(__dirname, "src", "index.tsx"),
+    entry: path.join(__dirname, "src", "index.jsx"),
     devtool: "source-map",
     output: {
       filename: "bundle.js",
@@ -19,7 +19,7 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/i,
+          test: /\.jsx?$/i,
           exclude: /node_modules/,
           use: [
             {
@@ -30,9 +30,6 @@ module.exports = (env) => {
               options: {
                 sourceMap: isDevelopment,
               },
-            },
-            {
-              loader: "ts-loader",
             },
           ],
         },
@@ -53,7 +50,7 @@ module.exports = (env) => {
       }),
     ],
     resolve: {
-      extensions: [".js", ".ts", ".tsx"],
+      extensions: [".js", ".jsx"],
     },
   };
 };
